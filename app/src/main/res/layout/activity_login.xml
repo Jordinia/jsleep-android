@@ -32,10 +32,9 @@
         android:id="@+id/LoginPasswordTextBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="101dp"
         android:layout_marginBottom="42dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -44,10 +43,9 @@
         android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@+id/LoginButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoginEmailTextBox"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/LoginEmailTextBox" />
 
     <EditText
         android:id="@+id/LoginEmailTextBox"
@@ -80,7 +78,7 @@
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:textSize="21sp"
         android:textStyle="bold"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,7 +92,9 @@
         android:layout_marginStart="134dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="135dp"
+        android:layout_marginBottom="5dp"
         android:text="Don't have an account?"
+        app:layout_constraintBottom_toTopOf="@+id/LoginRegisterNow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginButton" />

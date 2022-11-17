@@ -6,26 +6,191 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/JSleepRegister2"
-        android:layout_width="348dp"
-        android:layout_height="123dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="304dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="304dp"
-        android:backgroundTint="#8E8C8C"
-        android:backgroundTintMode="add"
-        android:fontFamily="@font/montserrat"
-        android:text="Hello!"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textSize="96sp"
-        android:textStyle="bold"
-        android:typeface="monospace"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="75dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/prev"
+            android:layout_width="216dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_semibold"
+            android:insetLeft="5dp"
+            android:insetRight="5dp"
+            android:text="Prev"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#fdb161"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Main_NextButton"
+            android:layout_width="216dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_semibold"
+            android:insetLeft="5dp"
+            android:insetRight="5dp"
+            android:text="Next"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#fecc98"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/Main_PageText"
+            android:layout_width="180dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number"
+            android:text="1"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/Main_GoButton"
+            android:layout_width="216dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_semibold"
+            android:insetLeft="5dp"
+            android:insetRight="5dp"
+            android:shadowColor="#FF0000"
+            android:text="GO"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#fdb161"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:rippleColor="#934C4C" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/Main_EntryList"
+        android:layout_width="409dp"
+        android:layout_height="654dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <!--    <ListView-->
+<!--        android:layout_width="409dp"-->
+<!--        android:layout_height="814dp"-->
+<!--        android:layout_marginStart="1dp"-->
+<!--        android:layout_marginTop="1dp"-->
+<!--        android:layout_marginEnd="1dp"-->
+<!--        android:layout_marginBottom="1dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />-->
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".MainActivity" >-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="410dp"-->
+<!--        android:layout_height="53dp"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.054">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/buttonPrev"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:text="Prev"-->
+<!--            android:insetLeft="5dp"/>-->
+<!--&lt;!&ndash;            android:insetRight="5dp"/>&ndash;&gt;-->
+
+<!--        <Button-->
+<!--            android:id="@+id/buttonNext"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="9dp"-->
+<!--            android:text="Next"-->
+<!--            android:insetLeft="5dp"/>-->
+<!--&lt;!&ndash;            android:insetRight="5dp" />&ndash;&gt;-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/pageEditText"-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="54dp"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:ems="10"-->
+<!--            android:inputType="number"-->
+<!--            android:insetLeft="5dp"-->
+<!--            android:text="1"-->
+<!--            tools:visibility="visible" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/buttonGo"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="6dp"-->
+<!--            android:text="Go"-->
+<!--            android:insetLeft="5dp"/>-->
+<!--&lt;!&ndash;        <Button&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/button5"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="35dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:fontFamily="@font/montserrat_semibold"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:insetLeft="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:insetRight="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="Prev"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textAppearance="@style/TextAppearance.AppCompat.Medium"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="14sp" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <Button&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/button6"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="35dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_weight="1"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:fontFamily="@font/montserrat_semibold"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:insetLeft="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:insetRight="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="Next"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textAppearance="@style/TextAppearance.AppCompat.Medium"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="14sp" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <EditText&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/pageEditText"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="100dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginEnd="16dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:ems="10"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:inputType="number"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="1"&ndash;&gt;-->
+<!--&lt;!&ndash;            tools:visibility="visible" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <Button&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/button7"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="35dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_weight="1"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:fontFamily="@font/montserrat_semibold"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:insetLeft="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:insetRight="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="Go"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textAppearance="@style/TextAppearance.AppCompat.Medium"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="14sp" />&ndash;&gt;-->
+<!--    </LinearLayout>-->
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
