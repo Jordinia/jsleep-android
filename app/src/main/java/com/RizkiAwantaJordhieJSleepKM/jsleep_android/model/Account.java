@@ -10,4 +10,17 @@ public class Account extends Serializable{
     public Account(int id) {
         super(id);
     }
+
+    @Override
+    public String toString(){
+        return "Account{" +
+                "balance=" + balance +
+                ", email" + email + '\'' +
+                ", name=" + name + '\'' +
+                ", password" + password + '\'' +
+                ", renter=" + renter + '\'' +
+                '}';
+    }
+
+
 }
