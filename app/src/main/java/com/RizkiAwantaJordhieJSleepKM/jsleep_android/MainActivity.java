@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.RizkiAwantaJordhieJSleepKM.jsleep_android.model.Account;
 import com.RizkiAwantaJordhieJSleepKM.jsleep_android.model.Room;
 import com.google.gson.Gson;
 
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
+    Account sessionAccount = LoginActivity.loggedAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

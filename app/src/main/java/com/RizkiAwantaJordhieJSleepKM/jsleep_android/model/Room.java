@@ -14,8 +14,4 @@ public class Room extends Serializable {
     public BedType bedType;
     public Facility facility;
 
-    public Room(int id) {
-        super(id);
-    }
-
 }

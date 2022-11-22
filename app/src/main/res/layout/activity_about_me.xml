@@ -133,22 +133,22 @@
                 app:layout_constraintTop_toBottomOf="@+id/AccountDetails" />
 
             <TextView
-                android:id="@+id/emailAccount"
-                android:layout_width="1dp"
-                android:layout_height="22dp"
-                android:layout_marginTop="52dp"
-                android:fontFamily="@font/montserrat"
-                android:textColor="#FFFFFF"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.95"
-                app:layout_constraintStart_toEndOf="@+id/email"
-                app:layout_constraintTop_toBottomOf="@+id/AccountDetails" />
-
-            <TextView
                 android:id="@+id/nameAccount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="52dp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.947"
+                app:layout_constraintStart_toEndOf="@+id/name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/emailAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="88dp"
                 android:fontFamily="@font/montserrat"
                 android:textColor="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"

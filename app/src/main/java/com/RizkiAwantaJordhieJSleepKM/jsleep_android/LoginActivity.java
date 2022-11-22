@@ -22,8 +22,9 @@ import retrofit2.Call;
 
 public class LoginActivity extends AppCompatActivity {
     BaseApiService mApiService;
-    EditText username,password;
+    EditText email,password;
     Context mContext;
+    public static Account loggedAccount = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mApiService = UtilsApi.getApiService();
         mContext = this;
-        username = findViewById(R.id.LoginEmailTextBox);
+        email = findViewById(R.id.LoginEmailTextBox);
         password = findViewById(R.id.LoginPasswordTextBox);
 
         TextView register = findViewById(R.id.LoginRegisterNow);
@@ -41,9 +42,14 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Account account = requestAccount();
-                Intent move = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(move);
+                System.out.println(email.getText().toString());
+                System.out.println(password.getText().toString());
+                Account account = requestLogin();
+                if(loggedAccount != null){
+                    movetoMainActivity();
+                }
+
+
             }
         });
 
@@ -57,6 +63,28 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    protected Account requestLogin(){
+        mApiService.login(email.getText().toString(),password.getText().toString()).enqueue(new Callback<Account>() {
+            @Override
+            public void onResponse(Call<Account> call, Response<Account> response) {
+                if(response.isSuccessful()){
+                    Toast.makeText(mContext,"Login Succesful",Toast.LENGTH_SHORT).show();
+                    loggedAccount = response.body();
+                    System.out.println("LOGIN SUCCESSFUL!!") ;
+                    System.out.println(loggedAccount.toString()) ;
+                    movetoMainActivity();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Account> call, Throwable t) {
+                System.out.println("LOGIN ERROR!!");
+                System.out.println(t.toString());
+                Toast.makeText(mContext,"Login Error",Toast.LENGTH_SHORT).show();
+            }
+        });
+        return null;
+    }
     protected Account requestAccount(){
         mApiService.getAccount(0).enqueue(new Callback<Account>(){
             @Override
@@ -78,5 +106,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
         return null;
+    }
+    public void movetoMainActivity(){
+        Intent move = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(move);
     }
 }
