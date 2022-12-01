@@ -21,9 +21,9 @@ import retrofit2.Call;
 
 
 public class LoginActivity extends AppCompatActivity {
-    BaseApiService mApiService;
+    public static BaseApiService mApiService;
     EditText email,password;
-    Context mContext;
+    public static Context mContext;
     public static Account loggedAccount = null;
 
     @Override
@@ -85,14 +85,14 @@ public class LoginActivity extends AppCompatActivity {
         });
         return null;
     }
-    protected Account requestAccount(){
-        mApiService.getAccount(0).enqueue(new Callback<Account>(){
+    public static Account requestAccount(){
+        mApiService.getAccount(loggedAccount.id).enqueue(new Callback<Account>(){
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
                 if(response.isSuccessful()){
                     Account account;
                     account = response.body();
-                    System. out. println("BERHASIL") ;
+                    System. out. println("REQUESTACCOUNT SUCCESSFUL") ;
                     System. out. println(account.toString()) ;
                 }
 
@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Account> call, Throwable t){
-                System.out.println("gagal");
+                System.out.println("REQUESTACCOUNT FAILED");
                 System.out.println(t.toString());
                 Toast.makeText(mContext,"no Account id=0",Toast.LENGTH_SHORT).show();
             }

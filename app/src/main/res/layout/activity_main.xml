@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/prev"
+            android:id="@+id/fixRegisterRenter"
             android:layout_width="216dp"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -51,7 +51,7 @@
             android:textAlignment="center" />
 
         <Button
-            android:id="@+id/Main_GoButton"
+            android:id="@+id/cancelRegisterRenter"
             android:layout_width="216dp"
             android:layout_height="60dp"
             android:layout_weight="1"

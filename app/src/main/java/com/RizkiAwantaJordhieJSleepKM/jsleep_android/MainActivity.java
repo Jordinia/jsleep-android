@@ -24,9 +24,12 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
     Account sessionAccount = LoginActivity.loggedAccount;
+//    Account test = LoginActivity.requestAccount();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+//        System.out.println(test.toString());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

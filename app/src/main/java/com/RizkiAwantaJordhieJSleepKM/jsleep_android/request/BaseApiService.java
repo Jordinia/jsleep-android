@@ -75,6 +75,9 @@ public interface BaseApiService {
                            @Query("city") City city,
                            @Query("address") String address);
 
+    @GET("room/getAllRoom")
+    Call<List<Room>> getAllRoom(@Query("page") int page, @Query("pageSize") int pageSize);
+
     //VoucherController BaseApi
     @GET("voucher/{id}")
     Call<Voucher> getVoucher (@Path("id") int id);
