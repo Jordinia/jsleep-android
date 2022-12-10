@@ -58,8 +58,8 @@ public class CreateRoomActivity extends AppCompatActivity {
         spinnerBed.setAdapter(new ArrayAdapter<BedType>(this, android.R.layout.simple_spinner_item, BedType.values()));
         spinnerCity.setAdapter(new ArrayAdapter<City>(this, android.R.layout.simple_spinner_item, City.values()));
         //button
-        Button submitRoom = findViewById(R.id.createRoomButton);
-        Button roomCancel = findViewById(R.id.cancelRoomButton);
+        Button submitRoom = findViewById(R.id.Main_PrevButton);
+        Button roomCancel = findViewById(R.id.bookNowButton);
 
         roomCancel.setOnClickListener(new View.OnClickListener() {
             @Override

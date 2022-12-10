@@ -14,7 +14,7 @@
         android:backgroundTint="#8E8C8C"
         android:backgroundTintMode="add"
         android:fontFamily="cursive"
-        android:text="Create Room"
+        android:text="JSleep"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textSize="60sp"
@@ -62,6 +62,94 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/roomBedType"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="119dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/roomFacility"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.214"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/roomCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="85dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@+id/roomFacility"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.79"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/roomSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/size" />
+
+                <TextView
+                    android:id="@+id/roomAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/address" />
+
+                <TextView
+                    android:id="@+id/size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="110dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Size"
+                    android:textColor="#FDB161"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/roomDetails" />
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:text="Address"
+                    android:textColor="#FDB161"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/size" />
+
+                <TextView
                     android:id="@+id/roomFacility3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -92,31 +180,24 @@
                     app:layout_constraintTop_toTopOf="@+id/roomFacility3"
                     tools:layout_editor_absoluteX="0dp">
 
-                    <TextView
-                        android:id="@+id/bedType"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/montserrat_semibold"
-                        android:shadowColor="#5DADEC"
-                        android:shadowDx="2"
-                        android:shadowDy="1.5"
-                        android:shadowRadius="1.6"
-                        android:text="Bed Type"
-                        android:textColor="#FDB161"
-                        android:textSize="16sp"
-                        tools:visibility="visible" />
 
-                    <Spinner
-                        android:id="@+id/spinnerBedType"
-                        android:fontFamily="@font/montserrat"
-                        android:textColor="@color/white"
+                    <TextView
+                        android:id="@+id/roomPrice"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:gravity="center"
+                        android:shadowColor="#5DADEC"
+                        android:shadowDx="2"
+                        android:shadowDy="1.5"
+                        android:shadowRadius="1.6"
+                        android:text="Price starts from"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        tools:visibility="visible" />
 
                 </LinearLayout>
 
@@ -154,30 +235,22 @@
                     tools:layout_editor_absoluteX="0dp">
 
                     <TextView
-                        android:id="@+id/City"
+                        android:id="@+id/price"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/montserrat_semibold"
+                        android:gravity="center"
                         android:shadowColor="#5DADEC"
                         android:shadowDx="2"
                         android:shadowDy="1.5"
                         android:shadowRadius="1.6"
-                        android:text="City"
+                        android:text="Price starts from"
                         android:textColor="#FDB161"
                         android:textSize="16sp"
                         tools:visibility="visible" />
-
-                    <Spinner
-                        android:id="@+id/spinnerCity"
-                        android:layout_height="wrap_content"
-                        android:layout_width="100dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_weight="1"
-                        app:layout_constraintStart_toEndOf="@+id/City" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -195,30 +268,16 @@
                     app:layout_constraintTop_toBottomOf="@+id/roomFacility3">
 
                     <Button
-                        android:id="@+id/Main_PrevButton"
-                        android:layout_width="210dp"
-                        android:layout_height="60dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#FDB161"
-                        android:fontFamily="@font/montserrat_semibold"
-                        android:insetLeft="10dp"
-                        android:insetRight="5dp"
-                        android:text="Create"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#FFFFFF"
-                        android:textStyle="bold" />
-
-                    <Button
                         android:id="@+id/bookNowButton"
                         android:layout_width="210dp"
                         android:layout_height="60dp"
                         android:layout_weight="1"
                         android:backgroundTint="#FDB161"
                         android:fontFamily="@font/montserrat_semibold"
-                        android:insetLeft="5dp"
+                        android:insetLeft="10dp"
                         android:insetRight="10dp"
                         android:shadowColor="#FF0000"
-                        android:text="Cancel"
+                        android:text="Book Now"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp"
@@ -248,87 +307,12 @@
                     app:layout_constraintVertical_bias="0.0"
                     tools:ignore="TextContrastCheck" />
 
-                <EditText
-                    android:id="@+id/createRoomName"
-                    android:layout_width="352dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:fontFamily="@font/montserrat"
-                    android:hint="Name"
-                    android:inputType="textShortMessage|textPersonName"
-                    android:minHeight="48dp"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#FFFFFF"
-                    app:backgroundTint="#FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.48"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/roomDetails"
-                    app:layout_constraintVertical_bias="0.0" />
-
-                <EditText
-                    android:id="@+id/createRoomPrice"
-                    android:layout_width="352dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:fontFamily="@font/montserrat"
-                    android:hint="Price"
-                    android:inputType="number|phone"
-                    android:minHeight="48dp"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#FFFFFF"
-                    app:backgroundTint="#FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.481"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/createRoomName"
-                    app:layout_constraintVertical_bias="0.0" />
-
-                <EditText
-                    android:id="@+id/createRoomAddress"
-                    android:layout_width="352dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:fontFamily="@font/montserrat"
-                    android:hint="Address"
-                    android:inputType="textLongMessage|textMultiLine"
-                    android:minHeight="48dp"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#FFFFFF"
-                    app:backgroundTint="#FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.481"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/createRoomPrice"
-                    app:layout_constraintVertical_bias="0.0" />
-
-                <EditText
-                    android:id="@+id/createRoomSize"
-                    android:layout_width="352dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="24dp"
-                    android:ems="10"
-                    android:fontFamily="@font/montserrat"
-                    android:hint="Size"
-                    android:inputType="number|phone"
-                    android:minHeight="48dp"
-                    android:textColor="#FFFFFF"
-                    android:textColorHint="#FFFFFF"
-                    app:backgroundTint="#FFFFFF"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.481"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/createRoomAddress"
-                    app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
                     android:id="@+id/roomFacility"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="245dp"
                     android:background="#9fdbf6"
                     android:fontFamily="@font/montserrat_semibold"
                     android:shadowColor="#5DADEC"
@@ -339,13 +323,11 @@
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display2"
                     android:textColor="#FDB161"
+
                     android:textSize="24sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/createRoomSize"
-                    app:layout_constraintVertical_bias="0.01999998"
-
+                    app:layout_constraintTop_toBottomOf="@+id/roomDetails"
                     tools:ignore="TextContrastCheck" />
 
                 <TableLayout
@@ -363,14 +345,14 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal">
 
-                        <ToggleButton
+                        <CheckBox
                             android:id="@+id/acFacility"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/check2"
                             android:buttonTint="#FFFFFF"
-                            android:clickable="true"
+                            android:clickable="false"
                             android:duplicateParentState="false"
                             android:fontFamily="@font/montserrat_semibold"
                             android:insetLeft="5dp"
@@ -380,14 +362,14 @@
                             android:textOff="AC"
                             android:textOn="AC" />
 
-                        <ToggleButton
+                        <CheckBox
                             android:id="@+id/refrigFacility"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/check2"
                             android:buttonTint="#FFFFFF"
-                            android:clickable="true"
+                            android:clickable="false"
                             android:duplicateParentState="false"
                             android:fontFamily="@font/montserrat_semibold"
                             android:insetLeft="5dp"
@@ -404,8 +386,9 @@
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal">
 
-                        <ToggleButton
+                        <CheckBox
                             android:id="@+id/bathtubFacility"
+                            android:clickable="false"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -420,14 +403,14 @@
                             android:textOff="Bathtub"
                             android:textOn="Bathtub" />
 
-                        <ToggleButton
+                        <CheckBox
                             android:id="@+id/balconyFacility"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/check2"
                             android:buttonTint="#FFFFFF"
-                            android:clickable="true"
+                            android:clickable="false"
                             android:duplicateParentState="false"
                             android:fontFamily="@font/montserrat_semibold"
                             android:insetLeft="5dp"
@@ -444,7 +427,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal">
 
-                        <ToggleButton
+                        <CheckBox
                             android:id="@+id/poolFacility"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
@@ -452,29 +435,29 @@
                             android:background="@drawable/check2"
                             android:buttonTint="#FFFFFF"
                             android:checked="false"
-                            android:clickable="true"
+                            android:clickable="false"
                             android:duplicateParentState="false"
                             android:fontFamily="@font/montserrat_semibold"
                             android:insetLeft="5dp"
                             android:insetRight="10dp"
-                            android:text="Balcony"
+                            android:text="Pool"
                             android:textColor="#FFFFFF"
                             android:textOff="Pool"
                             android:textOn="Pool" />
 
-                        <ToggleButton
+                        <CheckBox
                             android:id="@+id/fitnessFacility"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/check2"
                             android:buttonTint="#FFFFFF"
-                            android:clickable="true"
+                            android:clickable="false"
                             android:duplicateParentState="false"
                             android:fontFamily="@font/montserrat_semibold"
                             android:insetLeft="5dp"
                             android:insetRight="10dp"
-                            android:text="Balcony"
+                            android:text="Fitness"
                             android:textColor="#FFFFFF"
                             android:textOff="Fitness"
                             android:textOn="Fitness" />
@@ -486,41 +469,120 @@
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal">
 
-                        <ToggleButton
+                        <CheckBox
                             android:id="@+id/restoFacility"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/check2"
                             android:buttonTint="#FFFFFF"
-                            android:clickable="true"
+                            android:clickable="false"
                             android:duplicateParentState="false"
                             android:fontFamily="@font/montserrat_semibold"
                             android:insetLeft="5dp"
                             android:insetRight="10dp"
-                            android:text="Balcony"
+                            android:text="Restaurant"
                             android:textColor="#FFFFFF"
                             android:textOff="Restaurant"
                             android:textOn="Restaurant" />
 
-                        <ToggleButton
+                        <CheckBox
                             android:id="@+id/wifiFacility"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/check2"
                             android:buttonTint="#FFFFFF"
-                            android:clickable="true"
+                            android:clickable="false"
                             android:duplicateParentState="false"
                             android:fontFamily="@font/montserrat_semibold"
                             android:insetLeft="5dp"
                             android:insetRight="10dp"
-                            android:text="Balcony"
+                            android:text="WiFi"
                             android:textColor="#FFFFFF"
                             android:textOff="Wifi"
                             android:textOn="Wifi" />
                     </TableRow>
                 </TableLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/roomFacility"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <TextView
+                        android:id="@+id/bedType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="70dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:gravity="left"
+                        android:shadowColor="#5DADEC"
+                        android:shadowDx="2"
+                        android:shadowDy="1.5"
+                        android:shadowRadius="1.6"
+                        android:text="Bed"
+                        android:textColor="#FDB161"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/City"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="70dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:gravity="right"
+                        android:shadowColor="#5DADEC"
+                        android:shadowDx="2"
+                        android:shadowDy="1.5"
+                        android:shadowRadius="1.6"
+                        android:text="City"
+                        android:textColor="#FDB161"
+                        android:textSize="16sp"
+                        tools:visibility="visible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="177dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/roomFacility"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/roomDetails"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <TextView
+                        android:id="@+id/roomName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:shadowColor="#9fdbf6"
+                        android:shadowDx="3"
+                        android:shadowDy="3"
+                        android:shadowRadius="1.6"
+                        android:text="Executive Room"
+                        android:textColor="#FFFFFF"
+                        android:textSize="26sp" />
+
+                </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

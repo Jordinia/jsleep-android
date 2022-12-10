@@ -51,8 +51,8 @@ public class AboutMeActivity extends AppCompatActivity {
         EditText registName = findViewById(R.id.registerRenterName);
         EditText registAddress = findViewById(R.id.registerRenterAddress);
         EditText registPhone = findViewById(R.id.createRoomSize);
-        Button registerButton = findViewById(R.id.createRoomButton);
-        Button registerCancel = findViewById(R.id.cancelRoomButton);
+        Button registerButton = findViewById(R.id.Main_PrevButton);
+        Button registerCancel = findViewById(R.id.bookNowButton);
         //Renter = Registered
         ConstraintLayout listRenterConst = findViewById(R.id.listRenterConstraint);
         TextView nameRent = findViewById(R.id.nameRent);

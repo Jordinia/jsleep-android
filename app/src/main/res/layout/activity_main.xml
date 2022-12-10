@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/createRoomButton"
+            android:id="@+id/Main_PrevButton"
             android:layout_width="216dp"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -47,7 +47,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="number"
-            android:text="1"
+            android:text="        1"
             android:textAlignment="center" />
 
         <Button
@@ -68,7 +68,7 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/Main_EntryList"
+        android:id="@+id/Main_RoomList"
         android:layout_width="409dp"
         android:layout_height="654dp"
         app:layout_constraintBottom_toBottomOf="parent"
