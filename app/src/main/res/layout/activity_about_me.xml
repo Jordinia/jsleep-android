@@ -27,11 +27,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#5DADEC"
-            app:layout_constraintEnd_toEndOf="@+id/AccountDetails"
-            app:layout_constraintStart_toEndOf="@+id/AccountDetails">
+            app:layout_constraintEnd_toEndOf="@+id/roomDetails"
+            app:layout_constraintStart_toEndOf="@+id/roomDetails">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/AccountConstraint"
+                android:id="@+id/CreateRoomConstraint"
                 android:layout_width="match_parent"
                 android:layout_height="262dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -117,7 +117,7 @@
                     android:textColor="#FFFFFF"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/AccountDetails" />
+                    app:layout_constraintTop_toBottomOf="@+id/roomDetails" />
 
                 <TextView
                     android:id="@+id/emailAccount"
@@ -131,7 +131,7 @@
                     app:layout_constraintEnd_toEndOf="parent" />
 
                 <TextView
-                    android:id="@+id/AccountDetails"
+                    android:id="@+id/roomDetails"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="13dp"
@@ -194,7 +194,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AccountConstraint"
+                app:layout_constraintTop_toBottomOf="@+id/CreateRoomConstraint"
                 tools:visibility="visible">
 
                 <TextView
@@ -292,7 +292,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AccountConstraint"
+                app:layout_constraintTop_toBottomOf="@+id/CreateRoomConstraint"
                 app:layout_constraintVertical_bias="0.0"
                 tools:visibility="gone">
 
@@ -335,7 +335,7 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <EditText
-                    android:id="@+id/registerRenterPhone"
+                    android:id="@+id/createRoomSize"
                     android:layout_width="352dp"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -364,11 +364,11 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/registerRenterPhone"
+                    app:layout_constraintTop_toBottomOf="@+id/createRoomSize"
                     app:layout_constraintVertical_bias="0.19999999">
 
                     <Button
-                        android:id="@+id/fixRegisterRenter"
+                        android:id="@+id/createRoomButton"
                         android:layout_width="210dp"
                         android:layout_height="60dp"
                         android:layout_weight="1"
@@ -382,7 +382,7 @@
                         android:textStyle="bold" />
 
                     <Button
-                        android:id="@+id/cancelRegisterRenter"
+                        android:id="@+id/cancelRoomButton"
                         android:layout_width="210dp"
                         android:layout_height="60dp"
                         android:layout_weight="1"
@@ -410,7 +410,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AccountConstraint"
+                app:layout_constraintTop_toBottomOf="@+id/CreateRoomConstraint"
                 app:layout_constraintVertical_bias="0.0"
                 tools:visibility="gone">
 
