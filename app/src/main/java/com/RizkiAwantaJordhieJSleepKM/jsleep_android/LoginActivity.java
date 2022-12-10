@@ -72,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
                     loggedAccount = response.body();
                     System.out.println("LOGIN SUCCESSFUL!!") ;
                     System.out.println(loggedAccount.toString()) ;
+                    System.out.println(loggedAccount.id) ;
                     movetoMainActivity();
                 }
             }

@@ -63,7 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Account> call, Throwable t){
                 System.out.println(t.toString());
-                Toast.makeText(mContext, "Already registered", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Register Failed", Toast.LENGTH_SHORT).show();
             }
         });
 

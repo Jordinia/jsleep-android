@@ -106,7 +106,6 @@ public class PaymentInvoiceActivity extends AppCompatActivity{
                                     String from,
                                     String to){
         System.out.println("Callback");
-        //print all parameter
         System.out.println(buyerId);
         System.out.println(renterId);
         System.out.println(roomId);
@@ -117,12 +116,12 @@ public class PaymentInvoiceActivity extends AppCompatActivity{
             @Override
             public void onResponse(@NonNull Call<Payment> call, @NonNull Response<Payment> response) {
                 if(response.isSuccessful()){
-                    System.out.println("Payment Success");
+                    System.out.println("PAYMEN SUCCESSFUL");
                     payment = response.body();
                     System.out.println(payment);
                     Intent move = new Intent(PaymentInvoiceActivity.this,MainActivity.class);
                     startActivity(move);
-                    Toast.makeText(mContext, "Payment Success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Payment Successful!", Toast.LENGTH_SHORT).show();
                 }
             }
 

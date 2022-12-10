@@ -56,7 +56,7 @@ public class RenterOrderListActivity extends AppCompatActivity {
                     List<Payment> orderlist = response.body();
                     assert orderlist != null;
                     orderListData = new ArrayList<Payment>(orderlist);
-                    Toast.makeText(mContext, "Get Order Success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Order Successful!!", Toast.LENGTH_SHORT).show();
                     CustomOrderListAdapter adapter = new CustomOrderListAdapter(mContext,orderListData);
                     orderList.setAdapter(adapter);
 

@@ -23,31 +23,24 @@ import retrofit2.Response;
 public class OrderDetailActivity extends AppCompatActivity {
     BaseApiService mApiService;
     Context mContext;
-    TextView buyerId, from,to,status;
-    Payment payment;
-    Button accept,cancel;
-    ImageView backOrderDetail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        try
-        {
-            this.getSupportActionBar().hide();
-        }
-        catch (NullPointerException e){}
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_detail);
         mApiService = UtilsApi.getApiService();
         mContext = this;
 
-        backOrderDetail = findViewById(R.id.backOrderDetail);
+        ImageView backOrderDetail = findViewById(R.id.backOrderDetail);
 
-        payment = RenterOrderListActivity.orderListData.get(RenterOrderListActivity.orderIndex);
-        buyerId = findViewById(R.id.orderdetail_filltextviewidbuyer);
-        from = findViewById(R.id.orderdetail_filltextviewfromdate);
-        to = findViewById(R.id.orderdetail_filltextviewtodate);
-        status = findViewById(R.id.orderdetail_filltextviewstatus);
-        accept = findViewById(R.id.orderdetail_buttonaccept);
-        cancel = findViewById(R.id.orderdetail_buttoncancel);
+        Payment payment = RenterOrderListActivity.orderListData.get(RenterOrderListActivity.orderIndex);
+        TextView buyerId = findViewById(R.id.orderdetail_filltextviewidbuyer);
+        TextView from = findViewById(R.id.orderdetail_filltextviewfromdate);
+        TextView to = findViewById(R.id.orderdetail_filltextviewtodate);
+        TextView status = findViewById(R.id.orderdetail_filltextviewstatus);
+        Button accept = findViewById(R.id.orderdetail_buttonaccept);
+        Button cancel = findViewById(R.id.orderdetail_buttoncancel);
 
         buyerId.setText(String.valueOf(payment.buyerId));
         from.setText(payment.from.toString());

@@ -158,6 +158,7 @@ public class AboutMeActivity extends AppCompatActivity {
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 if(response.isSuccessful()){
                     Boolean topUpResult = response.body();
+                    System.out.println(LoginActivity.loggedAccount.toString());
                     System.out.println(topUpResult + "TOPUP SUCCESSFUL!!") ;
                     LoginActivity.loggedAccount.balance += balance;
                     Toast.makeText(mContext, "Top Up Successful", Toast.LENGTH_SHORT).show();
