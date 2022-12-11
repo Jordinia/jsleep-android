@@ -6,6 +6,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,8 +54,8 @@ public class AboutMeActivity extends AppCompatActivity {
         EditText registName = findViewById(R.id.registerRenterName);
         EditText registAddress = findViewById(R.id.registerRenterAddress);
         EditText registPhone = findViewById(R.id.createRoomSize);
-        Button registerButton = findViewById(R.id.Main_PrevButton);
-        Button registerCancel = findViewById(R.id.bookNowButton);
+        Button registerButton = findViewById(R.id.createRoomButton);
+        Button registerCancel = findViewById(R.id.cancelButton);
         //Renter = Registered
         ConstraintLayout listRenterConst = findViewById(R.id.listRenterConstraint);
         TextView nameRent = findViewById(R.id.nameRent);
@@ -176,5 +179,25 @@ public class AboutMeActivity extends AppCompatActivity {
             }
         });
         return null;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.homemenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent MainIntent = new Intent(AboutMeActivity.this,MainActivity.class);
+        switch (item.getItemId()){
+            case R.id.homeMainIntent:
+                Toast.makeText(this, "Returning to Home", Toast.LENGTH_SHORT).show();
+                startActivity(MainIntent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

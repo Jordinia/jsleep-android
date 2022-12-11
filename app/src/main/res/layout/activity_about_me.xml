@@ -7,6 +7,18 @@
     tools:context=".AboutMeActivity"
     tools:visibility="visible">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="167dp"
+        android:layout_height="171dp"
+        android:layout_marginStart="122dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="122dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/jsleep_oyen2_foreground" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="0dp"
@@ -17,10 +29,12 @@
         app:cardCornerRadius="16dp"
         app:cardElevation="3dp"
         app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -368,7 +382,7 @@
                     app:layout_constraintVertical_bias="0.19999999">
 
                     <Button
-                        android:id="@+id/Main_PrevButton"
+                        android:id="@+id/createRoomButton"
                         android:layout_width="210dp"
                         android:layout_height="60dp"
                         android:layout_weight="1"
@@ -382,7 +396,7 @@
                         android:textStyle="bold" />
 
                     <Button
-                        android:id="@+id/bookNowButton"
+                        android:id="@+id/cancelButton"
                         android:layout_width="210dp"
                         android:layout_height="60dp"
                         android:layout_weight="1"

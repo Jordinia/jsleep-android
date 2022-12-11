@@ -5,23 +5,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.ForegroundColorSpan;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.RizkiAwantaJordhieJSleepKM.jsleep_android.model.Room;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+
 public class PaymentActivity extends AppCompatActivity {
-    private CalendarView calendarView;
     public static String enddate;
     public static String startdate;
     Button continueInvoiceButton;
-    ImageView backCreatePayment;
+    ImageView backDetailRoom;
     EditText checkInDate, checkOutDate;
     DatePickerDialog datePickerDialogEnd,datePickerDialogStart;
 
@@ -30,16 +35,9 @@ public class PaymentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
-        calendarView = findViewById(R.id.pdCalender);
+        backDetailRoom = findViewById(R.id.backCreatePayment);
 
-        try {
-            this.getSupportActionBar().hide();
-        } catch (NullPointerException e) {
-        }
-
-        backCreatePayment = findViewById(R.id.backCreatePayment);
-
-        backCreatePayment.setOnClickListener(new View.OnClickListener() {
+        backDetailRoom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent move = new Intent(PaymentActivity.this, DetailRoomActivity.class);
@@ -74,8 +72,8 @@ public class PaymentActivity extends AppCompatActivity {
                     }
                 }, mYear, mMonth, mDay);
 
-        checkInDate = findViewById(R.id.checkInDate);
-        checkOutDate = findViewById(R.id.chechOutDate);
+        checkInDate = findViewById(R.id.dateCheckIn);
+        checkOutDate = findViewById(R.id.dateCheckOut);
 
         checkInDate.setOnClickListener(v -> {
             datePickerDialogStart.show();
@@ -90,11 +88,64 @@ public class PaymentActivity extends AppCompatActivity {
         continueInvoiceButton.setOnClickListener(new android.view.View.OnClickListener() {
             @Override
             public void onClick(android.view.View view) {
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 startdate = checkInDate.getText().toString();
                 enddate = checkOutDate.getText().toString();
                 Intent move = new Intent(PaymentActivity.this, PaymentInvoiceActivity.class);
                 startActivity(move);
+                try {
+                    Date start = dateFormat.parse(startdate);
+                    Date end = dateFormat.parse(enddate);
+                    if(availability(start,end,DetailRoomActivity.room)){
+                        Intent intent = new Intent(PaymentActivity.this, PaymentInvoiceActivity.class);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(PaymentActivity.this, "Room Already Booked on Selected Date", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         });
+    }
+
+    public boolean availability(Date from, Date to, Room room){
+
+
+        if(from.after(to) || from.equals(to)){
+            return false;
+        }
+
+        for (Date i : room.booked) {
+            if (from.equals(i)) {
+                return false;
+            } else if(from.before(i)){
+                if(from.before(i) && to.after(i)){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.homemenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent MainIntent = new Intent(PaymentActivity.this,MainActivity.class);
+        switch (item.getItemId()){
+            case R.id.homeMainIntent:
+                Toast.makeText(this, "Returning to Home", Toast.LENGTH_SHORT).show();
+                startActivity(MainIntent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

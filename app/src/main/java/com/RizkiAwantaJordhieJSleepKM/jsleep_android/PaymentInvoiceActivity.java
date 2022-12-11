@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -37,11 +40,7 @@ public class PaymentInvoiceActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_invoice);
-        try
-        {
-            this.getSupportActionBar().hide();
-        }
-        catch (NullPointerException e){}
+
         mApiService = UtilsApi.getApiService();
         mContext = this;
 
@@ -73,8 +72,9 @@ public class PaymentInvoiceActivity extends AppCompatActivity{
             cpFrom.setText(PaymentActivity.startdate);
             cpTo = findViewById(R.id.createpayment_to);
             cpTo.setText(PaymentActivity.enddate);
-            cpPrice.setText(String.valueOf(DetailRoomActivity.room.price.price));
-            cpTotalPrice.setText(String.valueOf(((double)diffDays) * DetailRoomActivity.room.price.price));
+            cpPrice.setText(DetailRoomActivity.roomprice);
+            Double totalPrice = (double)diffDays * DetailRoomActivity.room.price.price;
+            cpTotalPrice.setText(String.format("%.0f", totalPrice ));
 
 
 
@@ -116,7 +116,7 @@ public class PaymentInvoiceActivity extends AppCompatActivity{
             @Override
             public void onResponse(@NonNull Call<Payment> call, @NonNull Response<Payment> response) {
                 if(response.isSuccessful()){
-                    System.out.println("PAYMEN SUCCESSFUL");
+                    System.out.println("PAYMENT SUCCESSFUL");
                     payment = response.body();
                     System.out.println(payment);
                     Intent move = new Intent(PaymentInvoiceActivity.this,MainActivity.class);
@@ -127,11 +127,32 @@ public class PaymentInvoiceActivity extends AppCompatActivity{
 
             @Override
             public void onFailure(@NonNull Call<Payment> call, @NonNull Throwable t) {
-                Toast.makeText(mContext, "PAYMENT ERROR!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Payment Failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Your balance may be unsufficient", Toast.LENGTH_SHORT).show();
                 System.out.println(t.toString());
             }
         });
         return null;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.homemenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent MainIntent = new Intent(PaymentInvoiceActivity.this,MainActivity.class);
+        switch (item.getItemId()){
+            case R.id.homeMainIntent:
+                Toast.makeText(this, "Returning to Home", Toast.LENGTH_SHORT).show();
+                startActivity(MainIntent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 

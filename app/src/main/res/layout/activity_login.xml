@@ -24,7 +24,7 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129" />
+        app:layout_constraintVertical_bias="0.304" />
 
     <EditText
         android:id="@+id/LoginPasswordTextBox"
@@ -39,10 +39,9 @@
         android:textColorHint="#757575"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.518" />
+        app:layout_constraintVertical_bias="0.604" />
 
     <EditText
         android:id="@+id/LoginEmailTextBox"
@@ -58,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.411" />
+        app:layout_constraintVertical_bias="0.526" />
 
     <Button
         android:id="@+id/LoginButton"
@@ -78,19 +77,17 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.676" />
+        app:layout_constraintVertical_bias="0.727" />
 
     <TextView
         android:id="@+id/NoAccounttextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="134dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="135dp"
-        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/montserrat_italic"
         android:text="Don't have an account?"
         app:layout_constraintBottom_toTopOf="@+id/LoginRegisterNow"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginButton" />
 
@@ -98,15 +95,24 @@
         android:id="@+id/LoginRegisterNow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="157dp"
+        android:layout_marginBottom="130dp"
+        android:fontFamily="@font/montserrat_semibold"
         android:text="Register Now!"
-        android:textColor="#3955F1"
+        android:textColor="#FDB161"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NoAccounttextView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="231dp"
+        android:layout_height="195dp"
+        app:layout_constraintBottom_toTopOf="@+id/JSleepLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/jsleep_oyen_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

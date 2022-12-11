@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -58,8 +61,8 @@ public class CreateRoomActivity extends AppCompatActivity {
         spinnerBed.setAdapter(new ArrayAdapter<BedType>(this, android.R.layout.simple_spinner_item, BedType.values()));
         spinnerCity.setAdapter(new ArrayAdapter<City>(this, android.R.layout.simple_spinner_item, City.values()));
         //button
-        Button submitRoom = findViewById(R.id.Main_PrevButton);
-        Button roomCancel = findViewById(R.id.bookNowButton);
+        Button submitRoom = findViewById(R.id.createRoomButton);
+        Button roomCancel = findViewById(R.id.cancelButton);
 
         roomCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,5 +149,25 @@ public class CreateRoomActivity extends AppCompatActivity {
             }
         });
         return null;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.homemenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent MainIntent = new Intent(CreateRoomActivity.this,MainActivity.class);
+        switch (item.getItemId()){
+            case R.id.homeMainIntent:
+                Toast.makeText(this, "Returning to Home", Toast.LENGTH_SHORT).show();
+                startActivity(MainIntent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

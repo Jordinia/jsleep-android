@@ -11,7 +11,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     ListView list;
 
     Context mContext;
-    Button nextButton, prevButton, goButton;
+    Button nextButton, prevButton, goButton, myOrder;
     EditText editPage;
     public static int currentPage, tempPage, roomIndex;
 
@@ -57,12 +56,21 @@ public class MainActivity extends AppCompatActivity {
         mContext = this;
 
         nextButton  = findViewById(R.id.Main_NextButton);
-        prevButton  = findViewById(R.id.Main_PrevButton);
+        prevButton  = findViewById(R.id.createRoomButton);
+        myOrder     = findViewById(R.id.main_OrderButton);
         goButton    = findViewById(R.id.Main_GoButton);
         editPage    = findViewById(R.id.Main_PageText);
         list = (ListView) findViewById(R.id.Main_RoomList);
         list.setOnItemClickListener(this::onItemClick);
         temp = getALLRoom(currentPage);
+
+        myOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myOrderIntent = new Intent(MainActivity.this,BuyerOrderListActivity.class);
+                startActivity(myOrderIntent);
+            }
+        });
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(mContext, "Wrong page input!!", Toast.LENGTH_SHORT).show();
                 }
                 currentPage += 1;
-                temp = getALLRoom(currentPage);
+                temp = getALLRoom(tempPage);
             }
         });
     }
@@ -107,12 +115,15 @@ public class MainActivity extends AppCompatActivity {
     }
     public boolean onPrepareOptionsMenu(Menu menu)
     {
-        MenuItem register = menu.findItem(R.id.createRoom);
+        MenuItem createRoom = menu.findItem(R.id.createRoom);
+        MenuItem orderList = menu.findItem(R.id.orderList);
         if(LoginActivity.loggedAccount.renter == null){
-            register.setVisible(false);
+            createRoom.setVisible(false);
+            orderList.setVisible(false);
         }
         else {
-            register.setVisible(true);
+            createRoom.setVisible(true);
+            orderList.setVisible(true);
         }
         return true;
     }
@@ -120,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         Intent aboutMeIntent = new Intent(MainActivity.this,AboutMeActivity.class);
         Intent createRoomIntent = new Intent(MainActivity.this,CreateRoomActivity.class);
+        Intent orderListIntent = new Intent(MainActivity.this,OrderListActivity.class);
         switch (item.getItemId()){
             case R.id.aboutMe:
                 Toast.makeText(this, "About Me", Toast.LENGTH_SHORT).show();
@@ -129,6 +141,14 @@ public class MainActivity extends AppCompatActivity {
                 if (LoginActivity.loggedAccount.renter != null){
                     Toast.makeText(this, "Create Room", Toast.LENGTH_SHORT).show();
                     startActivity(createRoomIntent);
+                    return true;
+                } else if (LoginActivity.loggedAccount.renter == null){
+                    Toast.makeText(this, "You have not registered as Renter", Toast.LENGTH_SHORT).show();
+                }
+            case R.id.orderList:
+                if (LoginActivity.loggedAccount.renter != null){
+                    Toast.makeText(this, "Order List", Toast.LENGTH_SHORT).show();
+                    startActivity(orderListIntent);
                     return true;
                 } else if (LoginActivity.loggedAccount.renter == null){
                     Toast.makeText(this, "You have not registered as Renter", Toast.LENGTH_SHORT).show();

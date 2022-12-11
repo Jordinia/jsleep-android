@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".OrderListActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/createRoomButton"
+            android:id="@+id/OrderList_PrevButton"
             android:layout_width="216dp"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -28,7 +28,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/Main_NextButton"
+            android:id="@+id/OrderList_NextButton"
             android:layout_width="216dp"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -41,7 +41,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/Main_PageText"
+            android:id="@+id/OrderList_PageText"
             android:layout_width="180dp"
             android:layout_height="65dp"
             android:layout_weight="1"
@@ -51,7 +51,7 @@
             android:textAlignment="center" />
 
         <Button
-            android:id="@+id/Main_GoButton"
+            android:id="@+id/OrderList_GoButton"
             android:layout_width="216dp"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -68,49 +68,12 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/Main_RoomList"
-        android:layout_width="416dp"
-        android:layout_height="574dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0"
-        tools:visibility="visible" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="330dp"
-        android:layout_height="330dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/jsleep_oyen2_foreground" />
-
-    <LinearLayout
+        android:id="@+id/OrderList_RoomList"
         android:layout_width="409dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:orientation="horizontal"
+        android:layout_height="654dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/main_OrderButton"
-            android:layout_width="216dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:fontFamily="@font/montserrat_semibold"
-            android:insetLeft="5dp"
-            android:insetRight="5dp"
-            android:text="My Order"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#FDB161"
-            android:textStyle="bold" />
-    </LinearLayout>
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

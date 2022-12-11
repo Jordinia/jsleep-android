@@ -14,6 +14,9 @@ public class Invoice extends Serializable {
         WAITING,
         SUCCESS
     }
+    public Invoice(int id) {
+        super(id);
+    }
     public RoomRating rating;
     public PaymentStatus status;
 

@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 
 import com.RizkiAwantaJordhieJSleepKM.jsleep_android.model.Payment;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class CustomOrderListAdapter extends ArrayAdapter<Payment> {
@@ -24,20 +25,21 @@ public class CustomOrderListAdapter extends ArrayAdapter<Payment> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         View currentItemView = convertView;
         if(currentItemView == null){
             currentItemView = LayoutInflater.from(getContext()).inflate(R.layout.order_list,parent,false);
         }
 
-        Payment orderList = getItem(position);
+        Payment order = getItem(position);
 
         TextView date = currentItemView.findViewById(R.id.payment_date);
         TextView status = currentItemView.findViewById(R.id.payment_status);
 
-        String dateText = orderList.to.toString() + " - " + orderList.from.toString();
+        String dateText = dateFormat.format(order.from) + " - " + dateFormat.format(order.to);
         date.setText(dateText);
 
-        String statusText = "Status: " + orderList.status;
+        String statusText = "Status: " + order.status;
         status.setText(statusText);
 
 

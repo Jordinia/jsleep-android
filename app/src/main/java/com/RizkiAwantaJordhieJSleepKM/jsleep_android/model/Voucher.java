@@ -7,4 +7,10 @@ public class Voucher extends Serializable {
     public int code;
     public double minimum;
     private boolean used;
+
+    public Voucher(int id) {
+        super(id);
+    }
+
+
 }

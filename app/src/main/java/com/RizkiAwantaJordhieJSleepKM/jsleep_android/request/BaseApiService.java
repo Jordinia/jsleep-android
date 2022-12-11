@@ -64,6 +64,9 @@ public interface BaseApiService {
                                           @Query("page") int page,
                                           @Query("pageSize") int pageSize);
 
+    @GET("payment/getOrderForBuyer")
+    Call<List<Payment>> getOrderForBuyer(@Query("buyerId") int buyerId);
+
     //RoomController BaseApi
     @GET("room/{id}")
     Call<Room> getRoom (@Path("id") int id);

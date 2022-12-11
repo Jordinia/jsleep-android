@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/CreateRoom"
-        android:layout_width="348dp"
-        android:layout_height="72dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:backgroundTint="#8E8C8C"
         android:backgroundTintMode="add"
         android:fontFamily="cursive"
@@ -22,10 +22,10 @@
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01999998" />
+        app:layout_constraintVertical_bias="0.016" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -268,7 +268,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/roomFacility3">
 
                     <Button
-                        android:id="@+id/bookNowButton"
+                        android:id="@+id/cancelButton"
                         android:layout_width="210dp"
                         android:layout_height="60dp"
                         android:layout_weight="1"
@@ -590,5 +590,15 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/CreateRoom"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/jsleep_oyen_foreground"
+        tools:layout_editor_absoluteY="-5dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

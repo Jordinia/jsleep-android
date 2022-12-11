@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/search_button"
-        android:icon="@drawable/ic_baseline_search_24"
-        android:title="Search Menu"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"
-        app:showAsAction="collapseActionView|always"
+    <item android:id="@+id/orderList"
+        android:icon="@drawable/ic_baseline_bedroom_parent_24"
+        android:title="Order List"
+        app:showAsAction="ifRoom"
         />
+    <item
+        android:id="@+id/createRoom"
+        android:icon="@drawable/ic_baseline_add_box_24"
+        android:title="Create Room"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/aboutMe"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="About Me"
-        app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/createRoom"
-        android:icon="@drawable/ic_baseline_add_box_24"
-        android:title="Create Room"
         app:showAsAction="ifRoom" />
 </menu>

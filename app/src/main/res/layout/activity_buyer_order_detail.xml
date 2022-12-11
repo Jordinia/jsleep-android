@@ -56,20 +56,6 @@
             app:layout_constraintTop_toBottomOf="@+id/roomFacility3">
 
             <Button
-                android:id="@+id/acceptOrderButton"
-                android:layout_width="210dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FDB161"
-                android:fontFamily="@font/montserrat_semibold"
-                android:insetLeft="10dp"
-                android:insetRight="5dp"
-                android:text="Accept"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
-
-            <Button
                 android:id="@+id/cancelOrderButton"
                 android:layout_width="210dp"
                 android:layout_height="60dp"
@@ -93,7 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/montserrat_semibold"
-            android:text="Id "
+            android:text="Room"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -104,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/montserrat_semibold"
-            android:text="Id Pembeli"
+            android:text="roomname"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/orderdetail_textviewidbuyer" />

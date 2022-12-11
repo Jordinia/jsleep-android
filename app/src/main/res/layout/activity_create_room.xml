@@ -195,7 +195,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/roomFacility3">
 
                     <Button
-                        android:id="@+id/Main_PrevButton"
+                        android:id="@+id/createRoomButton"
                         android:layout_width="210dp"
                         android:layout_height="60dp"
                         android:layout_weight="1"
@@ -209,7 +209,7 @@
                         android:textStyle="bold" />
 
                     <Button
-                        android:id="@+id/bookNowButton"
+                        android:id="@+id/cancelButton"
                         android:layout_width="210dp"
                         android:layout_height="60dp"
                         android:layout_weight="1"
