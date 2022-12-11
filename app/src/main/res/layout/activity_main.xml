@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/fixRegisterRenter"
+            android:id="@+id/createRoomButton"
             android:layout_width="216dp"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -24,7 +24,7 @@
             android:insetRight="5dp"
             android:text="Prev"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#fdb161"
+            android:textColor="#FDB161"
             android:textStyle="bold" />
 
         <Button
@@ -37,7 +37,7 @@
             android:insetRight="5dp"
             android:text="Next"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#fecc98"
+            android:textColor="#FDB161"
             android:textStyle="bold" />
 
         <EditText
@@ -51,7 +51,7 @@
             android:textAlignment="center" />
 
         <Button
-            android:id="@+id/cancelRegisterRenter"
+            android:id="@+id/Main_GoButton"
             android:layout_width="216dp"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -61,7 +61,7 @@
             android:shadowColor="#FF0000"
             android:text="GO"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="#fdb161"
+            android:textColor="#FDB161"
             android:textSize="18sp"
             android:textStyle="bold"
             app:rippleColor="#934C4C" />

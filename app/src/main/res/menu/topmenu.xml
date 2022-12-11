@@ -8,15 +8,14 @@
         app:showAsAction="collapseActionView|always"
         />
     <item
-        android:id="@+id/person_menu"
+        android:id="@+id/aboutMe"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_person_24"
-        android:title="Person Menu"
+        android:title="About Me"
         app:showAsAction="ifRoom" />
-    <item android:id="@+id/Add_Box_Menu"
+    <item
+        android:id="@+id/createRoom"
         android:icon="@drawable/ic_baseline_add_box_24"
-        android:title="Add Box"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"
-        app:showAsAction="collapseActionView|always"
-        />
+        android:title="Create Room"
+        app:showAsAction="ifRoom" />
 </menu>

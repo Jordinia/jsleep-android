@@ -1,6 +1,7 @@
 package com.RizkiAwantaJordhieJSleepKM.jsleep_android.request;
 
 import com.RizkiAwantaJordhieJSleepKM.jsleep_android.model.Account;
+import com.RizkiAwantaJordhieJSleepKM.jsleep_android.model.BedType;
 import com.RizkiAwantaJordhieJSleepKM.jsleep_android.model.City;
 import com.RizkiAwantaJordhieJSleepKM.jsleep_android.model.Facility;
 import com.RizkiAwantaJordhieJSleepKM.jsleep_android.model.Payment;
@@ -8,6 +9,7 @@ import com.RizkiAwantaJordhieJSleepKM.jsleep_android.model.Renter;
 import com.RizkiAwantaJordhieJSleepKM.jsleep_android.model.Room;
 import com.RizkiAwantaJordhieJSleepKM.jsleep_android.model.Voucher;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -67,13 +69,15 @@ public interface BaseApiService {
                                       @Query("pageSize") int pageSize);
 
     @POST("room/create")
-    Call<Room> createRoom (@Query("accountId") int accountId,
-                           @Query("name") String name,
-                           @Query("size") int size,
-                           @Query("price") double price,
-                           @Query("facility") Facility facility,
-                           @Query("city") City city,
-                           @Query("address") String address);
+    Call<Room> createRoom(
+                        @Query("accountId") int accountId,
+                        @Query("name") String name,
+                        @Query("size") int size,
+                        @Query("price") int price,
+                        @Query("facility") ArrayList<Facility> facility,
+                        @Query("city") City city,
+                        @Query("address") String address,
+                        @Query("bedType") BedType bedType);
 
     @GET("room/getAllRoom")
     Call<List<Room>> getAllRoom(@Query("page") int page, @Query("pageSize") int pageSize);

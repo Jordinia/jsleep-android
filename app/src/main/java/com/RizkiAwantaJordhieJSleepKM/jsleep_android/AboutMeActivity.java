@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.RizkiAwantaJordhieJSleepKM.jsleep_android.model.Account;
 import com.RizkiAwantaJordhieJSleepKM.jsleep_android.model.Renter;
 import com.RizkiAwantaJordhieJSleepKM.jsleep_android.request.BaseApiService;
 import com.RizkiAwantaJordhieJSleepKM.jsleep_android.request.UtilsApi;
@@ -24,7 +23,6 @@ import retrofit2.Response;
 public class AboutMeActivity extends AppCompatActivity {
     BaseApiService mApiService;
     Context mContext;
-    Account sessionAccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,17 +30,16 @@ public class AboutMeActivity extends AppCompatActivity {
 
         mApiService = UtilsApi.getApiService();
         mContext = this;
-        sessionAccount = LoginActivity.loggedAccount;
 
         //Account Details
-        System.out.println(sessionAccount.toString());
+        System.out.println(LoginActivity.loggedAccount.toString());
         TextView nameAccount = findViewById(R.id.nameAccount);
         TextView emailAccount = findViewById(R.id.emailAccount);
         TextView balanceAccount = findViewById(R.id.balanceAccount);
-        nameAccount.setText(sessionAccount.name);
-        emailAccount.setText(sessionAccount.email);
+        nameAccount.setText(LoginActivity.loggedAccount.name);
+        emailAccount.setText(LoginActivity.loggedAccount.email);
         System.out.println(emailAccount.toString());
-        balanceAccount.setText(Double.toString(sessionAccount.balance));
+        balanceAccount.setText(Double.toString(LoginActivity.loggedAccount.balance));
         Button topUpButton = findViewById(R.id.buttonTopUp);
         EditText topUpAmount = findViewById(R.id.editTopUpAmount);
         //Renter = Null
@@ -53,9 +50,9 @@ public class AboutMeActivity extends AppCompatActivity {
         ConstraintLayout regisRenterConst = findViewById(R.id.regisRenterConstraint);
         EditText registName = findViewById(R.id.registerRenterName);
         EditText registAddress = findViewById(R.id.registerRenterAddress);
-        EditText registPhone = findViewById(R.id.registerRenterPhone);
-        Button registerButton = findViewById(R.id.fixRegisterRenter);
-        Button registerCancel = findViewById(R.id.cancelRegisterRenter);
+        EditText registPhone = findViewById(R.id.createRoomSize);
+        Button registerButton = findViewById(R.id.createRoomButton);
+        Button registerCancel = findViewById(R.id.cancelRoomButton);
         //Renter = Registered
         ConstraintLayout listRenterConst = findViewById(R.id.listRenterConstraint);
         TextView nameRent = findViewById(R.id.nameRent);
@@ -73,11 +70,11 @@ public class AboutMeActivity extends AppCompatActivity {
                     Toast.makeText(mContext, "Top Up Failed: Enter Required Top Up Amount!!", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Boolean topUp = requestTopUp(sessionAccount.id,Integer.parseInt(topUpAmount.getText().toString()));
+                    Boolean topUp = requestTopUp(LoginActivity.loggedAccount.id,Integer.parseInt(topUpAmount.getText().toString()));
                 }
             }
         });
-        if (sessionAccount.renter == null) {
+        if (LoginActivity.loggedAccount.renter == null) {
             nullRenterConst.setVisibility(ConstraintLayout.VISIBLE);
             listRenterConst.setVisibility(ConstraintLayout.GONE);
             regisRenterConst.setVisibility(ConstraintLayout.GONE);
@@ -92,7 +89,7 @@ public class AboutMeActivity extends AppCompatActivity {
                     registerButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Renter renter = requestRegisterRenter(sessionAccount.id, registName.getText().toString(), registAddress.getText().toString(), registPhone.getText().toString());
+                            Renter renter = requestRegisterRenter(LoginActivity.loggedAccount.id, registName.getText().toString(), registAddress.getText().toString(), registPhone.getText().toString());
 
                             nullRenterConst.setVisibility(ConstraintLayout.GONE);
                             listRenterConst.setVisibility(ConstraintLayout.GONE);
@@ -119,9 +116,9 @@ public class AboutMeActivity extends AppCompatActivity {
             nullRenterConst.setVisibility(ConstraintLayout.GONE);
             listRenterConst.setVisibility(ConstraintLayout.VISIBLE);
             regisRenterConst.setVisibility(ConstraintLayout.GONE);
-            nameRenter.setText(sessionAccount.renter.username);
-            addressRenter.setText(sessionAccount.renter.address);
-            phoneRenter.setText(sessionAccount.renter.phoneNumber);
+            nameRenter.setText(LoginActivity.loggedAccount.renter.username);
+            addressRenter.setText(LoginActivity.loggedAccount.renter.address);
+            phoneRenter.setText(LoginActivity.loggedAccount.renter.phoneNumber);
         }
     }
 
@@ -138,6 +135,7 @@ public class AboutMeActivity extends AppCompatActivity {
                     LoginActivity.loggedAccount.renter = renter;
                     System.out.println("REGISTER RENTER SUCCESSFUL!!") ;
                     Toast.makeText(mContext, "Register Renter Successful", Toast.LENGTH_SHORT).show();
+                    MainActivity.reloadAccount(LoginActivity.loggedAccount.id);
                     Intent move = new Intent(AboutMeActivity.this, AboutMeActivity.class);
                     startActivity(move);
                 }
@@ -160,9 +158,10 @@ public class AboutMeActivity extends AppCompatActivity {
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 if(response.isSuccessful()){
                     Boolean topUpResult = response.body();
-                    System.out.println("TOPUP SUCCESSFUL!!") ;
+                    System.out.println(topUpResult + "TOPUP SUCCESSFUL!!") ;
                     LoginActivity.loggedAccount.balance += balance;
                     Toast.makeText(mContext, "Top Up Successful", Toast.LENGTH_SHORT).show();
+                    MainActivity.reloadAccount(LoginActivity.loggedAccount.id);
                     Intent move = new Intent(AboutMeActivity.this, AboutMeActivity.class);
                     startActivity(move);
                 }
